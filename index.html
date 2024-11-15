@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio PDF Reader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="image/logo_image.jpg" alt="Logo" class="logo">
+        <button id="choose-pdf-button">Choose PDF</button>
+        <button id="read-pdf-button">Start Reading</button>
+        <button id="pause-button">Pause</button>
+        <button id="resume-button">Resume</button>
+        <button id="stop-button">Stop</button>
+        <select id="language-select">
+            <option value="en-US" selected>English</option>
+            <option value="hi-IN">Hindi</option>
+        </select>
+    </nav>
+    <div class="container">
+        <h1>Audio PDF Reader</h1>
+        <input type="file" id="pdf-input" accept="application/pdf" style="display: none;">
+        <p id="status"></p>
+        <div id="pdf-navigation">
+            <button id="prev-page-button">Previous Page</button>
+            <span>Page <span id="page-num">1</span> of <span id="page-count">1</span></span>
+            <button id="next-page-button">Next Page</button>
+            <input type="number" id="page-number-input" placeholder="Go to page">
+            <button id="go-to-page-button">Go</button>
+            <input type="text" id="topic-search-input" placeholder="Search topic">
+            <button id="search-topic-button">Search</button>
+        </div>
+        <div id="pdf-viewer"></div>
+
+        <!-- Book Animation -->
+        <div id="book" class="book">
+            <span class="page turn"></span>
+            <span class="page turn"></span>
+            <span class="page turn"></span>
+            <span class="page turn"></span>
+            <span class="page turn"></span>
+            <span class="page turn"></span>
+            <span class="cover"></span>
+            <span class="page"></span>
+            <span class="cover turn"></span>
+        </div>
+    </div>
+
+    <!-- Dictionary Modal -->
+    <div id="dictionary-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="word-title"></h2>
+            <p id="word-meanings"></p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
